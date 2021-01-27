@@ -4,15 +4,18 @@
     <TargetFrameworks>net5.0</TargetFrameworks>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Id>Serilog.Sinks.AzureEventGrid</Id>
+    <Title>Serilog.Sinks.AzureEventGrid</Title>
     <Authors>carlubian</Authors>
     <Description>Send log events to custom topics in Azure Event Grid</Description>
-    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/carlubian/serilog-sinks-eventgrid</PackageProjectUrl>
     <PackageIconUrl>http://serilog.net/images/serilog-sink-nuget.png</PackageIconUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/carlubian/serilog-sinks-eventgrid</RepositoryUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageTags>serilog sink events eventgrid azure</PackageTags>
     <Version>2.0.0</Version>
+    <AssemblyName>Serilog.Sinks.AzureEventGrid</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

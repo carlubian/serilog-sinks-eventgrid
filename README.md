@@ -2,7 +2,7 @@
 
 All log events are sent to a custom event grid topic as an HTTP Post. For more information on Event Grid, see https://docs.microsoft.com/en-us/azure/event-grid/
 
-[![NuGet](https://img.shields.io/nuget/v/Serilog.Sinks.EventGrid.v2.svg)](https://www.nuget.org/packages/Serilog.Sinks.EventGrid.v2/)
+[![NuGet](https://img.shields.io/nuget/v/Serilog.Sinks.AzureEventGrid.svg)](https://www.nuget.org/packages/Serilog.Sinks.AzureEventGrid/)
 
 ## Targets
 
@@ -11,7 +11,7 @@ All log events are sent to a custom event grid topic as an HTTP Post. For more i
 ## Usage
 
 ```csharp
-// Full
+// Initialize logger
 Log.Logger = new LoggerConfiguration()
           .WriteTo.EventGrid("TopicKeyorSASTokenString", 
             "https://my-topic-name.westus2-1.eventgrid.azure.net/api/events",
@@ -20,10 +20,19 @@ Log.Logger = new LoggerConfiguration()
             "SubjectPropertyName",
             "EventPropertyName",
             restrictedToMinimumLevel: LogEventLevel.Information)
-          .CreateLogger()
+          .CreateLogger();
   
-  // Min
-  Log.Logger = new LoggerConfiguration().WriteTo.EventGrid().CreateLogger()
+// Send log entries
+Log.Information("This is my Event {@MyContext}", myContext);
+
+// Alternative minimal initialization
+Log.Logger = new LoggerConfiguration()
+          .WriteTo.EventGrid("TopicKeyorSASTokenString", 
+            "https://my-topic-name.westus2-1.eventgrid.azure.net/api/events")
+          .CreateLogger();
+
+// Include event type and subject on each call
+Log.InformationEvent("myEventTypeName", "myEventSubjectName", "This is my Event {@MyContext}", myContext);
 ```
 
 ### Required
