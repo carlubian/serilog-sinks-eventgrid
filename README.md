@@ -93,6 +93,8 @@ Log.ErrorEvent("myEventTypeName", "myEventSubjectName", "This is my Event {@MyCo
 Log.FatalEvent("myEventTypeName", "myEventSubjectName", "This is my Event {@MyContext}", myContext);
 ```
 
+In this situation, log severity will be sent to Event Grid as an additional property called 'Severity'.
+
 ### Custom Attributes
 
 As an alternative to specifying the subject and type through log configuration or properties, you can decorate your code at design time with the `[EventGridSubject]` and `[EventGridType]` Attributes. Any method or class is supported, using one or both on each. The Serilog log event called within the context of a method or class decorated with either attribute, will use those values when submitting the event. The first ones closest to the log event call in the stack, win.
