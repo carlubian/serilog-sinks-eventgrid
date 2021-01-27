@@ -2,12 +2,11 @@
 
 All log events are sent to a custom event grid topic as an HTTP Post. For more information on Event Grid, see https://docs.microsoft.com/en-us/azure/event-grid/
 
-[![NuGet](https://img.shields.io/nuget/v/Serilog.Sinks.EventGrid.svg)](https://www.nuget.org/packages/Serilog.Sinks.EventGrid/) [![Build status](https://ci.appveyor.com/api/projects/status/o0nwqlc7ebkdw5g6/branch/master?svg=true)](https://ci.appveyor.com/project/Authenticom/serilog-sinks-eventgrid/branch/master) [![Waffle.io - Columns and their card count](https://badge.waffle.io/sirkirby/serilog-sinks-eventgrid.svg?columns=all)](https://waffle.io/sirkirby/serilog-sinks-eventgrid)
+[![NuGet](https://img.shields.io/nuget/v/Serilog.Sinks.EventGrid.v2.svg)](https://www.nuget.org/packages/Serilog.Sinks.EventGrid.v2/)
 
 ## Targets
 
-* [.NET Standard 2](https://github.com/dotnet/standard/blob/master/docs/versions.md) (netstandard2)
-* .NET Framework 4.6.1 (net461)
+* .NET 5 (net5.0)
 
 ## Usage
 
@@ -86,13 +85,12 @@ using Serilog.Sinks.EventGrid
 
 ```csharp
 // type, subject, and information event message with properties
-Log.Event("myEventTypeName", "myEventSubjectName", "This is my Event {@MyContext}", myContext);
-// type or subject with information event message and properties
-Log.EventType("myEventTypeName", "This is my Event {@MyContext}", myContext);
-Log.EventSubject("myEventSubjectName", "This is my Event {@MyContext}", myContext);
-// type or subject with information event message
-Log.EventType("myEventTypeName", "This is my Event");
-Log.EventSubject("myEventSubjectName", "This is my Event");
+Log.InformationEvent("myEventTypeName", "myEventSubjectName", "This is my Event {@MyContext}", myContext);
+// also supports other severity levels
+Log.DebugEvent("myEventTypeName", "myEventSubjectName", "This is my Event {@MyContext}", myContext);
+Log.WarningEvent("myEventTypeName", "myEventSubjectName", "This is my Event {@MyContext}", myContext);
+Log.ErrorEvent("myEventTypeName", "myEventSubjectName", "This is my Event {@MyContext}", myContext);
+Log.FatalEvent("myEventTypeName", "myEventSubjectName", "This is my Event {@MyContext}", myContext);
 ```
 
 ### Custom Attributes
@@ -147,6 +145,3 @@ public class MyLogicClass
   "topic" "subscriptionInfo"
 }]
 ```
-
-
-
