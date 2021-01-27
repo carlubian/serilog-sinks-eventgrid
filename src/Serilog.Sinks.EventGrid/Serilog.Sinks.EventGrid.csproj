@@ -1,33 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <TargetFrameworks>net5.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Chris Kirby</Authors>
-    <Company />
-    <Product />
+    <Authors>carlubian</Authors>
     <Description>Send log events to custom topics in Azure Event Grid</Description>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/authenticom/serilog-sinks-eventgrid</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/carlubian/serilog-sinks-eventgrid</PackageProjectUrl>
     <PackageIconUrl>http://serilog.net/images/serilog-sink-nuget.png</PackageIconUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/Authenticom/serilog-sinks-eventgrid</RepositoryUrl>
+    <RepositoryUrl>https://github.com/carlubian/serilog-sinks-eventgrid</RepositoryUrl>
     <PackageTags>serilog sink events eventgrid azure</PackageTags>
-    <Copyright>Copyright © Chris Kirby 2017</Copyright>
-    <Version>1.1.1</Version>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
-    <PackageReference Include="Microsoft.Net.Http">
-      <Version>2.2.29</Version>
-    </PackageReference>
-  </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-    <PackageReference Include="Serilog" Version="2.6.0" />
-    <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="2.1.1" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.4.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="2.3.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
   </ItemGroup>
 
 </Project>
