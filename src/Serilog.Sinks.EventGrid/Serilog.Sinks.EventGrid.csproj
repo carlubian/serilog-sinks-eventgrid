@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/carlubian/serilog-sinks-eventgrid</RepositoryUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageTags>serilog sink events eventgrid azure</PackageTags>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <AssemblyName>Serilog.Sinks.AzureEventGrid</AssemblyName>
   </PropertyGroup>
 
